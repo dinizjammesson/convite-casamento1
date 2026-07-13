@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite de Casamento - Flávia & Jammesson</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .gift-card {
+    background-color: #f8f8f8;
+    border: 2px solid #cad2c5;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.gift-card img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.gift-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #588157;
+    margin-bottom: 10px;
+}
+
+.gift-text {
+    font-size: 0.95em;
+    line-height: 1.5;
+    color: #3e4a36;
+}
+
+.gift-code {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #588157;
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background-color: #f4f1ea;
+            color: #3e4a36;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            width: 375px; 
+            max-width: 90%;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
+            border: 2px solid #a3b18a;
+            position: relative;
+        }
+
+        .container::before, .container::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.5;
+            z-index: 0;
+        }
+        .container::before {
+            top: 10px;
+            left: 10px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M10,40 Q30,10 60,30 T90,60" stroke="%233e4a36" fill="none" stroke-width="2"/></svg>');
+        }
+        .container::after {
+            bottom: 10px;
+            right: 10px;
+            transform: rotate(180deg);
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M10,40 Q30,10 60,30 T90,60" stroke="%233e4a36" fill="none" stroke-width="2"/></svg>');
+        }
+
+        .header {
+            text-align: center;
+            padding: 30px 20px 10px;
+            background-color: #a3b18a;
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3em;
+            margin: 0;
+            font-weight: normal;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            margin: 5px 0 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .photo-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .main-photo-container {
+            width: 300px;
+            height: 360px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 5px solid #a3b18a;
+        }
+
+        .main-photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background-color: #fff;
+            
+        }
+
+        .photo-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .gallery-item {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid #cad2c5;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .details {
+            text-align: center;
+            padding: 0 20px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .names {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2em;
+            color: #3e4a36;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .date-time {
+            font-size: 1.3em;
+            color: #588157;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        .buttons-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 0 20px 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            color: #3e4a36;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #a3b18a;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+        }
+
+        .btn:hover {
+            background-color: #a3b18a;
+            color: white;
+        }
+
+        .btn-rsvp {
+            background-color: #588157;
+            color: white;
+            border: none;
+        }
+
+        .btn-gift {
+            background-color: #cad2c5;
+            border-color: #cad2c5;
+        }
+
+        .icon {
+            margin-right: 12px;
+            font-size: 1.1em;
+            width: 20px;
+            text-align: center;
+        }
+
+        .footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 1em;
+    color: #588157;
+    font-style: italic;
+    border-top: 1px solid #cad2c5;
+    margin-top: 10px;
+    background: transparent;
+}
+        .miniatura-agua {
+    object-position: center top;
+}
+
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Great+Vibes&display=swap');
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Nosso Casamento</h1>
+        <p>Salvem a Data</p>
+    </div>
+
+    <div class="photo-section">
+
+    <!-- Foto Principal -->
+    <div class="main-photo-container">
+        <img id="fotoPrincipal" src="foto 01.jpeg" alt="Foto do Casal">
+    </div>
+
+    <!-- Miniaturas -->
+    <div class="photo-gallery">
+
+        <div class="gallery-item">
+            <img class="miniatura-agua"
+                 src="foto 01.jpeg"
+                 alt="Foto 1"
+                 onclick="trocarFoto('foto 01.jpeg')">
+        </div>
+
+        <div class="gallery-item">
+            <img src="foto 02.jpeg"
+                 alt="Foto 2"
+                 onclick="trocarFoto('foto 02.jpeg')">
+        </div>
+
+        <div class="gallery-item">
+            <img src="foto 03.jpeg"
+                 alt="Foto 3"
+                 onclick="trocarFoto('foto 03.jpeg')">
+        </div>
+
+    </div>
+
+</div>
+
+    <div class="details">
+        <div class="names">Flávia & Jammesson</div>
+        <div class="date-time">Sábado, 05 de Setembro de 2026 às 17:30h</div>
+        <p>Convidam para a celebração de sua união.</p>
+    </div>
+
+    <div class="buttons-section">
+        <a href="https://www.google.com/maps/search/?api=1&query=Rua+Manoel+Ribeiro+da+Silva,04,Rio+Doce,Olinda" target="_blank" class="btn">
+            <i class="fa-solid fa-church icon"></i> Ver Endereço da Igreja
+        </a>
+
+        <a href="https://www.google.com/maps/search/?api=1&query=Degust+Recepções+Av+Carlos+de+Lima+Cavalcante+4639" target="_blank" class="btn">
+            <i class="fa-solid fa-champagne-glasses icon"></i> Ver Local da Recepção
+        </a>
+
+        <a href="https://api.whatsapp.com/send?phone=5581987485920&text=Olá! Confirmo minha presença no casamento de Flávia e Jammesson." target="_blank" class="btn btn-rsvp">
+            <i class="fa-solid fa-calendar-check icon"></i> Confirmar Presença (RSVP)
+        </a>
+
+       <button type="button" class="btn btn-gift" onclick="mostrarLista()">
+    <i class="fa-solid fa-gift icon"></i>
+    Nossa Lista de Presentes
+</button>
+
+<div id="listaPresentes" class="gift-card" style="display:none;">
+
+    
+
+    <div class="gift-title">
+        <i class="fa-solid fa-gift"></i> Lista de Presentes
+    </div>
+
+    <div class="gift-text">
+        Para aqueles que desejarem nos presentear, nossa lista de presentes está disponível na  
+        <strong>CVC. </strong>.
+
+        <br><br>
+
+        Basta comparecer a qualquer loja CVC e informar o código abaixo para acessar nossa lista:
+    </div>
+
+    <div class="gift-code">
+        CÓDIGO: 1037869
+    </div>
+
+    <br><br>
+
+  
+
+</div>
+
+    <div class="footer">
+        Com carinho, os noivos.
+    </div>
+</div>
+   <script>
+
+function mostrarLista() {
+    const lista = document.getElementById('listaPresentes');
+
+    if (lista.style.display === 'none') {
+        lista.style.display = 'block';
+    } else {
+        lista.style.display = 'none';
+    }
+}
+
+// ===========================
+// CARROSSEL DAS FOTOS
+// ===========================
+
+const fotos = [
+    "foto 01.jpeg",
+    "foto 02.jpeg",
+    "foto 03.jpeg"
+];
+
+let indice = 0;
+
+function trocarFoto(foto) {
+
+    const img = document.getElementById("fotoPrincipal");
+
+    img.src = foto;
+
+    if (foto === "foto 01.jpeg") {
+        img.style.objectPosition = "center 15%";
+    }
+
+    if (foto === "foto 02.jpeg") {
+        img.style.objectPosition = "center center";
+    }
+
+    if (foto === "foto 03.jpeg") {
+        img.style.objectPosition = "center center";
+    }
+
+    indice = fotos.indexOf(foto);
+}
+
+setInterval(function () {
+
+    indice++;
+
+    if (indice >= fotos.length) {
+        indice = 0;
+    }
+
+    trocarFoto(fotos[indice]);
+
+}, 3000);
+
+</script>
+
+</body>
+</html>
